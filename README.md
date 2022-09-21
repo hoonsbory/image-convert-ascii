@@ -41,7 +41,7 @@ new Convert('img', 'pre', 100, 100);
 
 ```html
 <script type="module">
-  import Convert from 'https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/index.js';
+  import Convert from 'https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/Convert.js';
   new Convert('img', 'pre', 100, 100);
 </script>
 ```
