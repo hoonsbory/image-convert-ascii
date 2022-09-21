@@ -1,0 +1,17 @@
+{
+  "name": "image-convert-ascii",
+  "version": "1.0.2",
+  "description": "convert image to ascii",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ascii"
+  ],
+  "author": "tonymkcv",
+  "license": "ISC"
+}
