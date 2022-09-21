@@ -13,7 +13,7 @@ export default class Convert {
     this.PRE = document.getElementById(preId);
     this.width = width;
     this.height = height / 2;
-    this.IMG.onload = () => this.startConvert();
+    this.startConvert();
   }
 
   startConvert() {
