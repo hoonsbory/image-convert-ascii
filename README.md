@@ -40,7 +40,7 @@ new Convert('img', 'pre', 100, 100);
 #### in browser
 
 ```html
-<script type="module">
+<script defer type="module">
   import Convert from 'https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/Convert.js';
   new Convert('img', 'pre', 100, 100);
 </script>
