@@ -11,12 +11,6 @@ convert img element to ascii
 $ npm install image-convert-ascii
 ```
 
-#### in browser
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/notModule.js"></script>
-```
-
 ### Syntax
 
 ```javascript
@@ -46,8 +40,8 @@ new Convert('img', 'pre', 100, 100);
 #### in browser
 
 ```html
-<script>
-  //input img, pre element ID and size
+<script type="module">
+  import Convert from 'https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/index.js';
   new Convert('img', 'pre', 100, 100);
 </script>
 ```
