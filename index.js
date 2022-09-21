@@ -1,5 +1,5 @@
 export default class Convert {
-  textArr = ['@', '$', '#', '&', '*', '=', '-', ',', '.', ' ', ' '];
+  asciiArr = ['@', '$', '#', '&', '*', '=', '-', ',', '.', ' ', ' '];
 
   /**
    *
@@ -38,7 +38,7 @@ export default class Convert {
     let str = '';
     pixelData.forEach((rgb, idx) => {
       const lightness = Math.round(this.calculateLightness(rgb) * 100);
-      str += this.textArr[Math.floor(lightness / 10)];
+      str += this.asciiArr[Math.floor(lightness / 10)];
       if ((idx + 1) % canvas.width == 0) str += '\n';
     });
     this.PRE.innerText = str;
