@@ -25,7 +25,7 @@ new Convert(img element ID, pre element ID, width, height);
 <body style="font-size: 10px">
   <pre id="pre"></pre>
   <!-- Insert the image want to convert -->
-  <img id="img" src="./asciiTest.png" />
+  <img id="img" src="./asciiTest.png" crossorigin="anonymous" />
 </body>
 ```
 
