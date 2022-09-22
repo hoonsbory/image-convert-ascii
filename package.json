@@ -1,6 +1,6 @@
 {
   "name": "image-convert-ascii",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "convert image to ascii",
   "main": "Convert.js",
   "repository": {
@@ -14,7 +14,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "ascii"
+    "ascii",
+    "image",
+    "convert",
+    "img-element",
+    "html-ascii",
+    "html",
+    "ascii-arts",
+    "canvas"
   ],
   "author": "tonymkcv",
   "license": "ISC"

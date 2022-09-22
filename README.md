@@ -1,7 +1,7 @@
 ## Convert Image to Ascii
 
 convert img element to ascii  
-![screenshot](https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/convertAscii.png)
+![screenshot](https://cdn.jsdelivr.net/gh/hoonsbory/image-convert-ascii/convertAscii.gif)
 
 ### Installation
 
