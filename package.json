@@ -1,6 +1,6 @@
 {
   "name": "image-convert-ascii",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "convert image to ascii",
   "main": "Convert.js",
   "repository": {

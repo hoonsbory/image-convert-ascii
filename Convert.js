@@ -25,6 +25,32 @@ export default class Convert {
     ctx.drawImage(this.IMG, 0, 0, canvas.width, canvas.height);
 
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const pixelData = this.getPixelData(imageData);
+
+    this.PRE.innerText = this.lightness_to_ascii(pixelData);
+  }
+
+  /**
+   * convert lightness to ascii code
+   * @param {number[][]} pixelData
+   * @returns {string}
+   */
+  lightness_to_ascii(pixelData) {
+    let str = '';
+    pixelData.forEach((rgb, idx) => {
+      const lightness = Math.round(this.calculateLightness(rgb) * 100);
+      str += this.asciiArr[Math.floor(lightness / 10)];
+      if ((idx + 1) % this.width == 0) str += '\n';
+    });
+    return str;
+  }
+
+  /**
+   * devide pixel data from canvas image data
+   * @param {number[]} imageData
+   * @returns {number[][]}
+   */
+  getPixelData(imageData) {
     const pixelData = [];
     let tempArr = [];
     imageData.data.forEach((num, idx) => {
@@ -34,16 +60,14 @@ export default class Convert {
         tempArr = [];
       }
     });
-
-    let str = '';
-    pixelData.forEach((rgb, idx) => {
-      const lightness = Math.round(this.calculateLightness(rgb) * 100);
-      str += this.asciiArr[Math.floor(lightness / 10)];
-      if ((idx + 1) % canvas.width == 0) str += '\n';
-    });
-    this.PRE.innerText = str;
+    return pixelData;
   }
 
+  /**
+   * calculate lightness using RGB data
+   * @param {number[]} arr
+   * @returns {number}
+   */
   calculateLightness(arr) {
     const R = arr[0];
     const G = arr[1];
