@@ -52,14 +52,10 @@ export default class Convert {
    */
   getPixelData(imageData) {
     const pixelData = [];
-    let tempArr = [];
-    imageData.data.forEach((num, idx) => {
-      if ((idx + 1) % 4 != 0) tempArr.push(num);
-      else {
-        pixelData.push(tempArr);
-        tempArr = [];
-      }
-    });
+    const { data } = imageData;
+    for (let i = 0; i < data.length; i += 4) {
+      pixelData.push([data[i], data[i + 1], data[i + 2]]);
+    }
     return pixelData;
   }
 
@@ -72,22 +68,15 @@ export default class Convert {
     const R = arr[0];
     const G = arr[1];
     const B = arr[2];
-    let Max = 0.0;
-    let Min = 0.0;
 
-    let fR = R / 255.0;
-    let fG = G / 255.0;
-    let fB = B / 255.0;
+    const fR = R / 255.0;
+    const fG = G / 255.0;
+    const fB = B / 255.0;
 
-    if (fR >= fG && fR >= fB) Max = fR;
-    else if (fG >= fB && fG >= fR) Max = fG;
-    else if (fB >= fG && fB >= fR) Max = fB;
+    const cMax = Math.max(fR, fG, fB);
+    const cMin = Math.min(fR, fG, fB);
 
-    if (fR <= fG && fR <= fB) Min = fR;
-    else if (fG <= fB && fG <= fR) Min = fG;
-    else if (fB <= fG && fB <= fR) Min = fB;
-
-    let Lightness = (Min + Max) / 2.0;
+    const Lightness = (cMax + cMin) / 2;
 
     return Lightness;
   }
