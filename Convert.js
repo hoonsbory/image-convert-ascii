@@ -27,7 +27,7 @@ export default class Convert {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const pixelData = this.getPixelData(imageData);
 
-    this.PRE.innerText = this.lightness_to_ascii(pixelData);
+    this.PRE.innerText = this.lightnessToAscii(pixelData);
   }
 
   /**
@@ -35,10 +35,10 @@ export default class Convert {
    * @param {number[][]} pixelData
    * @returns {string}
    */
-  lightness_to_ascii(pixelData) {
+  lightnessToAscii(pixelData) {
     let str = '';
     pixelData.forEach((rgb, idx) => {
-      const lightness = Math.round(this.calculateLightness(rgb) * 100);
+      const lightness = this.calculateLightness(rgb);
       str += this.asciiArr[Math.floor(lightness / 10)];
       if ((idx + 1) % this.width == 0) str += '\n';
     });
@@ -76,8 +76,8 @@ export default class Convert {
     const cMax = Math.max(fR, fG, fB);
     const cMin = Math.min(fR, fG, fB);
 
-    const Lightness = (cMax + cMin) / 2;
-
-    return Lightness;
+    const lightness = (cMax + cMin) / 2;
+    const lightnessPercent = Math.round(lightness) * 100;
+    return lightnessPercent;
   }
 }
